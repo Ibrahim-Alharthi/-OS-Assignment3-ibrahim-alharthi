@@ -93,7 +93,7 @@ class SharedResources {
       try {
           executionLog.add(message);
       } finally {
-              LogLock.lock();
+              LogLock.unlock();
 
       }
     }
