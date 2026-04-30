@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Queue;
 import java.util.Random;
+import java.util.concurrent.Semaphore;
 import java.util.concurrent.locks.ReentrantLock;
 class Colors {
     public static final String RESET = "\u001B[0m";
@@ -38,12 +39,12 @@ class SharedResources {
     
     // TODO #1: Add a ReentrantLock(s) here to protect critical sections
     // Example: public static final ReentrantLock lock = new ReentrantLock();
-     private static final  ReentrantLock contextSwitchLock= new ReentrantLock();
-    private static final  ReentrantLock completedProcessCountLock= new ReentrantLock();
-    private static final  ReentrantLock totalWaitingTimeLock= new ReentrantLock();
+    public static final  ReentrantLock contextSwitchLock= new ReentrantLock();
+    public static final  ReentrantLock completedProcessCountLock= new ReentrantLock();
+    public static final  ReentrantLock totalWaitingTimeLock= new ReentrantLock();
     // TODO #2: Add a Semaphore to limit concurrent process execution
     // Example: public static final Semaphore cpuSemaphore = new Semaphore(1);
-    
+    public static final Semaphore CpuSemaphore = new Semaphore(1);
     // Method to increment context switch counter
     public static void incrementContextSwitch() {
         // TODO: Protect this critical section with a lock
