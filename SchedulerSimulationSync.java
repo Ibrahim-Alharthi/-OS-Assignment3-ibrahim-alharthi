@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Queue;
 import java.util.Random;
+import java.util.concurrent.locks.ReentrantLock;
 class Colors {
     public static final String RESET = "\u001B[0m";
     public static final String BOLD = "\u001B[1m";
@@ -22,9 +23,10 @@ class Colors {
     public static final String BRIGHT_YELLOW = "\u001B[93m";
     public static final String BRIGHT_GREEN = "\u001B[92m";
 }
-
 // ⚠️ SHARED RESOURCES - These need synchronization! ⚠️
 class SharedResources {
+ 
+
     // TODO: Students will add synchronization mechanisms here
     // HINT: Use ReentrantLock for mutual exclusion
     // HINT: Use Semaphore for limiting concurrent access
@@ -36,7 +38,9 @@ class SharedResources {
     
     // TODO #1: Add a ReentrantLock(s) here to protect critical sections
     // Example: public static final ReentrantLock lock = new ReentrantLock();
-    
+     private static final  ReentrantLock contextSwitchLock= new ReentrantLock();
+    private static final  ReentrantLock completedProcessCountLock= new ReentrantLock();
+    private static final  ReentrantLock totalWaitingTimeLock= new ReentrantLock();
     // TODO #2: Add a Semaphore to limit concurrent process execution
     // Example: public static final Semaphore cpuSemaphore = new Semaphore(1);
     
@@ -66,7 +70,6 @@ class SharedResources {
         executionLog.add(message);
     }
 }
-
 // Class representing a process that implements Runnable to be run by a thread
 class Process implements Runnable {
     private String name;
