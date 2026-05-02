@@ -319,12 +319,12 @@ I would explain synchronization like a bathroom with only one key. If many peopl
 **Repository URL**: 
 https://github.com/Ibrahim-Alharthi/-OS-Assignment3-ibrahim-alharthi.git
 **Number of commits**: 
-
+code commits : 4-5
 **Commit messages**: 
-1. 
-2. 
-3. 
-4. 
+1. Set my student ID: 445050024
+2. protecting the context switch with the lock
+3. adding semaphore to the method run
+4. adding semaphore to runTocomplete method
 
 ---
 
