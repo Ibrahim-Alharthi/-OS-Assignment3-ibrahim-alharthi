@@ -229,7 +229,7 @@ try {
 ```
 
 **Effect on program behavior**: 
-
+Allows only one process at a time, preventing race conditions but reducing parallelism.
 ---
 
 ## Part 4: Testing and Verification (2 marks)
