@@ -317,7 +317,7 @@ I would explain synchronization like a bathroom with only one key. If many peopl
 ## Part 6: GitHub Repository Information
 
 **Repository URL**: 
-
+https://github.com/Ibrahim-Alharthi/-OS-Assignment3-ibrahim-alharthi.git
 **Number of commits**: 
 
 **Commit messages**: 
@@ -331,16 +331,16 @@ I would explain synchronization like a bathroom with only one key. If many peopl
 ## Summary
 
 **Total time spent on assignment**: 
-
+3-2 days
 **Key takeaways**: 
-1. 
-2. 
-3. 
+1. learn how to apply locks , semaphore
+2. understood how race conditions happen
+3. Improved debugging and handling multithreaded code
 
 **Most challenging aspect**: 
-
+managing the try and catch scope to avoid errors or deadlocks.
 **What I'm most proud of**: 
-
+Successfully implementing synchronization correctly and ensuring the program runs without errors
 ---
 
 **End of Documentation**
